@@ -13,7 +13,7 @@
       <%  data << "ゴーヤの消費先：#{record["give_for"]}" %>
     <% end %>
 
-    <% result = connection.exec("select give_for, quality from crops;") %>
+    <% result = connection.exec("select quality from crops where quality = 'false';") %>
     <% data2 = [] %>
     <% result.each do |record| %>
       <%  data2 << "ゴーヤの質：#{record["quality"]}" %>
